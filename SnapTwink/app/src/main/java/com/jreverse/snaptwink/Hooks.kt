@@ -31,7 +31,7 @@ class Hooks : IXposedHookLoadPackage {
                         "JS7",
                         lpparam.classLoader,
                         "b",
-                        "is7",
+                        "IS7",
                         XC_MethodReplacement.DO_NOTHING
                     ); // Screenshot Bypass
                     XposedBridge.log("[SnapTwink] Screenshot Bypassed")
