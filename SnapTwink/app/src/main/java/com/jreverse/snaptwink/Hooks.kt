@@ -28,11 +28,10 @@ class Hooks : IXposedHookLoadPackage {
                     XposedBridge.log("[SnapTwink] Hooked Snapchat")
                     super.afterHookedMethod(param)
                     findAndHookMethod(
-                        "Fq6",
+                        "JS7",
                         lpparam.classLoader,
-                        "a",
-                        "fq6",
-                        "eq6",
+                        "b",
+                        "is7",
                         XC_MethodReplacement.DO_NOTHING
                     ); // Screenshot Bypass
                     XposedBridge.log("[SnapTwink] Screenshot Bypassed")
