@@ -1,5 +1,5 @@
 # SnapTwink
-- SnapTwink A snapchat Xposed Module in Kotlin to learn
+- SnapTwink A Snapchat Xposed Module in Kotlin to learn
 
 # Devolepment roadmap [❌] = In progress [✔️] = Done
 - Screenshot Bypass [✔️]
@@ -9,9 +9,9 @@
 
 
 # Current Supported Version APKS
-- https://www.apkmirror.com/apk/snap-inc/snapchat/snapchat-11-44-0-37-release/ (11.44.0.37)
-- https://dmca.download/55d125fef39745f6b29bb26feebea370/Snapchat_11.44.0.37.7z (Mirror Link)
+- https://www.apkmirror.com/apk/snap-inc/snapchat/snapchat-11-45-0-38-release/ (11.45.0.38)
+- https://dmca.download/18363871e7c634cfa3f815b1a216cf11/Snapchat-11.45.0.38.rar (Mirror Link)
 
 
 # Read
-- Project Holted (No new updates) Moving to iPhone until snapchat android gets darkmode and pinning
+- Project Holted (No major updates) Moving to iPhone until snapchat android gets darkmode and pinning
