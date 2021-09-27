@@ -3,7 +3,7 @@
 
 # Devolepment roadmap [❌] = In progress [✔️] = Done
 - Screenshot Bypass [✔️]
-- Saving [❌]
+- Saving [✔️]
 - Stealth Mode [❌]
 - AdBlocker [❌]
 
