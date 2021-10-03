@@ -95,10 +95,10 @@ class Hooks : IXposedHookLoadPackage {
                     XposedBridge.log("[SnapTwink] Hooked Snapchat")
                     super.afterHookedMethod(param)
                     findAndHookMethod(
-                        "le8",
+                        "qf8",
                         lpparam.classLoader,
                         "b",
-                        "ke8",
+                        "pf8",
                         XC_MethodReplacement.DO_NOTHING
                     ) // Screenshot Bypass
                     val home = File(String.format("%s/SnapTwink/", Environment.getExternalStorageDirectory()))
@@ -113,32 +113,64 @@ class Hooks : IXposedHookLoadPackage {
                         home.setWritable(true)
                     }
 
-                    val snapStorage = File(String.format("%s/files/file_manager/chat_snap/", snapContext.applicationInfo.dataDir))
+                        Thread {
+                            val snapStorage = File(String.format("%s/files/file_manager/chat_snap/", snapContext.applicationInfo.dataDir))
 
-                    if (snapStorage.exists()) {
-                        XposedBridge.log("[SnapTwink]: Snapchat 'chat_snap' folder exists")
-                        XposedBridge.log("[SnapTwink]: Checking folder permissions: READ = " + snapStorage.canRead().toString() + ", WRITE = " + snapStorage.canWrite())
-                        if (!snapStorage.canRead()) {
-                            XposedBridge.log("[SnapTwink]: Trying to get read access...")
-                            if (snapStorage.setReadable(true)) {
-                                XposedBridge.log("[SnapTwink]: Read access was successful")
-                            } else {
-                                XposedBridge.log("[SnapTwink]: Failed to gain read access")
+                            if (snapStorage.exists()) {
+                                XposedBridge.log("[SnapTwink]: Snapchat 'Snaps' folder exists")
+                                XposedBridge.log("[SnapTwink]: Checking folder permissions: READ = " + snapStorage.canRead().toString() + ", WRITE = " + snapStorage.canWrite())
+                                if (!snapStorage.canRead()) {
+                                    XposedBridge.log("[SnapTwink]: Trying to get read access...")
+                                    if (snapStorage.setReadable(true)) {
+                                        XposedBridge.log("[SnapTwink]: Read access was successful")
+                                    } else {
+                                        XposedBridge.log("[SnapTwink]: Failed to gain read access")
+                                    }
+                                }
+                            val files: Array<File> = snapStorage.listFiles()
+                            XposedBridge.log("[SnapTwink]: Snapchat 'Snaps' folder have a length of: " + files.size)
+                            for (i in files.indices) {
+                                XposedBridge.log("[SnapTwink]: Found file: " + files[i].getPath())
+                                if (copySnapMedia(files[i], home)) {
+                                    XposedBridge.log("[SnapTwink]: Successfully saved Snap: " + files[i].getPath())
+                                } else {
+                                    XposedBridge.log("[SnapTwink]: Failed to save Snap: " + files[i].getPath())
+                                }
                             }
+                        } else {
+                            XposedBridge.log("[SnapTwink]: Snapchat 'Snaps' folder does NOT exists")
                         }
-                        val files: Array<File> = snapStorage.listFiles()
-                        XposedBridge.log("[SnapTwink]: Snapchat 'chat_snap' folder have a length of: " + files.size)
-                        for (i in files.indices) {
-                            XposedBridge.log("[SnapTwink]: Found file: " + files[i].getPath())
-                            if (copySnapMedia(files[i], home)) {
-                                XposedBridge.log("[SnapTwink]: Successfully saved Snap: " + files[i].getPath())
-                            } else {
-                                XposedBridge.log("[SnapTwink]: Failed to save Snap: " + files[i].getPath())
+                    }.start()
+
+                        Thread {
+                            val storyStorage = File(String.format("%s/files/file_manager/story_snap/", snapContext.applicationInfo.dataDir))
+
+                            if (storyStorage.exists()) {
+                                XposedBridge.log("[SnapTwink]: Snapchat 'Stories' folder exists")
+                                XposedBridge.log("[SnapTwink]: Checking folder permissions: READ = " + storyStorage.canRead().toString() + ", WRITE = " + storyStorage.canWrite())
+                                if (!storyStorage.canRead()) {
+                                    XposedBridge.log("[SnapTwink]: Trying to get read access...")
+                                    if (storyStorage.setReadable(true)) {
+                                        XposedBridge.log("[SnapTwink]: Read access was successful")
+                                    } else {
+                                        XposedBridge.log("[SnapTwink]: Failed to gain read access")
+                                    }
+                                }
+                            val files: Array<File> = storyStorage.listFiles()
+                            XposedBridge.log("[SnapTwink]: Snapchat 'Stories' folder have a length of: " + files.size)
+                            for (i in files.indices) {
+                                XposedBridge.log("[SnapTwink]: Found file: " + files[i].getPath())
+                                if (copySnapMedia(files[i], home)) {
+                                    XposedBridge.log("[SnapTwink]: Successfully saved Snap: " + files[i].getPath())
+                                } else {
+                                    XposedBridge.log("[SnapTwink]: Failed to save Snap: " + files[i].getPath())
+                                }
                             }
+                        } else {
+                            XposedBridge.log("[SnapTwink]: Snapchat 'Stories' folder does NOT exists")
                         }
-                    } else {
-                        XposedBridge.log("[SnapTwink]: Snapchat 'chat_snap' folder does NOT exists")
-                    }
+                        }.start()
+
                 }
             })
             XposedBridge.log("[SnapTwink] Hooks completed")
