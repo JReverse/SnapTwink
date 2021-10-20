@@ -95,10 +95,10 @@ class Hooks : IXposedHookLoadPackage {
                     XposedBridge.log("[SnapTwink] Hooked Snapchat")
                     super.afterHookedMethod(param)
                     findAndHookMethod(
-                        "Mp8",
+                        "rv8",
                         lpparam.classLoader,
                         "b",
-                        "Lp8",
+                        "qv8",
                         XC_MethodReplacement.DO_NOTHING
                     ) // Screenshot Bypass
                     val home = File(String.format("%s/SnapTwink/", Environment.getExternalStorageDirectory()))
