@@ -9,8 +9,7 @@
 
 
 # Current Supported Version APKS
-- https://www.apkmirror.com/apk/snap-inc/snapchat/snapchat-11-48-0-36-release/ (11.48.0.36)
-- https://dmca.download/18363871e7c634cfa3f815b1a216cf11/Snapchat-11.45.0.38.rar (Mirror Link)
+- https://www.apkmirror.com/apk/snap-inc/snapchat/snapchat-11-49-1-26-release/ (11.48.1.26)
 
 
 # Read
