@@ -10,7 +10,3 @@
 
 # Current Supported Version APKS
 - https://www.apkmirror.com/apk/snap-inc/snapchat/snapchat-11-49-1-26-release/ (11.48.1.26)
-
-
-# Read
-- Project Holted (No major updates) Moving to iPhone until snapchat android gets darkmode and pinning
