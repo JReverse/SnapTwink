@@ -9,4 +9,4 @@
 
 
 # Current Supported Version APKS
-- https://www.apkmirror.com/apk/snap-inc/snapchat/snapchat-11-49-1-26-release/ (11.48.1.26)
+- https://www.apkmirror.com/apk/snap-inc/snapchat/snapchat-11-57-0-35-release/ (11.57.0.35)
