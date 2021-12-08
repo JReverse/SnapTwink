@@ -12,5 +12,5 @@ Development roadmap [❌] = In progress [✔️] = Done
 - https://www.apkmirror.com/apk/snap-inc/snapchat/snapchat-11-57-0-35-release/ (11.57.0.35)
 
 # Faq
-Will you add spoofing?:
+Will you add spoofing?
 + No Please check out to spoof -> https://github.com/JReverse/creative-kit-sample
