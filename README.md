@@ -13,4 +13,7 @@ Development roadmap [❌] = In progress [✔️] = Done
 
 # Faq
 Will you add spoofing?
-+ No Please check out to spoof -> https://github.com/JReverse/creative-kit-sample
++ No Please check out to spoof -> https://github.com/JReverse/creative-kit-sample (Also a APK Pre-Built is provided in the released With Extra tag)
+
+# Notes
+- I only work on this in my freetime i currently have a fulltime job.
