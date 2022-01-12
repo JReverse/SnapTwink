@@ -1,3 +1,5 @@
+# WILL BE REWRITING / FINISHING WHEN ONEPLUS 10 PRO COMES OUT IM STILL ON IOS TILL THEN
+
 # SnapTwink
 - SnapTwink A Snapchat Xposed Module in Kotlin to learn
 
